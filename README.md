@@ -46,4 +46,4 @@ In this hack you will learn how to:
 
 ## Contributors
 
-- Anahita Afshari
+- Anastasia Nefedova
