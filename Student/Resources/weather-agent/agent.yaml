@@ -1,9 +1,11 @@
-$schema: https://azuremlschemas.azureedge.net/promptflow/latest/AgentManifest.schema.json
 kind: hosted
+name: weather-agent
 protocols:
-  - responses
-environment:
-  variables:
-    AZURE_AI_MODEL_DEPLOYMENT_NAME: gpt-4-1
+  - protocol: responses
+    version: 1.0.0
 resources:
-  instance_type: Standard_DS2_v2
+  cpu: "0.5"
+  memory: 1Gi
+environment_variables:
+  - name: AZURE_AI_MODEL_DEPLOYMENT_NAME
+    value: gpt-4-1
