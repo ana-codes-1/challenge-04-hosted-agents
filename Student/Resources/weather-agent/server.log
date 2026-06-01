@@ -1,0 +1,549 @@
+c:\Users\anefedova\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\agent_framework\_skills.py:116: ExperimentalWarning: [SKILLS] SkillResource is experimental and may change or be removed in future versions without notice.
+c:\Users\anefedova\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\agent_framework\_harness\_memory.py:651: ExperimentalWarning: [HARNESS] MemoryStore is experimental and may change or be removed in future versions without notice.
+2026-05-31 22:51:38,707 WARNING microsoft.opentelemetry._genai._langchain._tracer_instrumentor: LangChain instrumentation is disabled because 'langchain-core' is not installed. Install the optional extra with `pip install microsoft-opentelemetry[langchain]` to enable it.
+2026-05-31 22:51:40,288 INFO azure.ai.agentserver: Tracing configured successfully via microsoft-opentelemetry distro.
+2026-05-31 22:51:40,288 INFO azure.ai.agentserver: Responses protocol: storage_provider=InMemoryResponseProvider, default_model=(not set), default_fetch_history_count=100, shutdown_grace_period=10s
+2026-05-31 22:51:40,349 INFO azure.ai.agentserver: AgentServerHost starting on 0.0.0.0:8088
+2026-05-31 22:51:40,350 INFO azure.ai.agentserver: AgentServerHost started
+2026-05-31 22:51:40,350 INFO azure.ai.agentserver: Platform environment: is_hosted=False, agent_name=(not set), agent_version=(not set), port=8088, session_id=(not set), sse_keepalive_interval=disabled, ws_ping_interval=disabled
+2026-05-31 22:51:40,350 INFO azure.ai.agentserver: Connectivity: project_endpoint=https://new-agent-test-ai.services.ai.azure.com, otlp_endpoint=(not set), appinsights_configured=False
+2026-05-31 22:51:40,350 INFO azure.ai.agentserver: Host options: shutdown_timeout=30s, protocols=azure-ai-agentserver-core/2.0.0b5 (python/3.14), azure-ai-agentserver-responses/1.0.0b7 (python/3.14)
+[2026-05-31 22:51:40 -0400] [13776] [INFO] Running on http://0.0.0.0:8088 (CTRL + C to quit)
+2026-05-31 22:51:40,351 INFO hypercorn.error: Running on http://0.0.0.0:8088 (CTRL + C to quit)
+2026-05-31 22:51:42,466 INFO azure.ai.agentserver: Inbound GET /readiness started
+2026-05-31 22:51:42,467 INFO azure.ai.agentserver: 127.0.0.1:55341 "GET /readiness 1.1" 200 20 796μs
+2026-05-31 22:51:42,467 INFO azure.ai.agentserver: Inbound GET /readiness completed with status 200 in 0.7ms
+2026-05-31 22:51:46,973 INFO azure.ai.agentserver: Inbound POST /responses started
+2026-05-31 22:51:46,978 INFO azure.ai.agentserver: Creating response caresp_8eb6671bbe416c8e00cV1YNaISL0hZVON6wIbqzyONzNqee1uI: streaming=False background=False store=True model=gpt-4-1 conversation_id=None previous_response_id=None has_user_isolation_key=False has_chat_isolation_key=False
+2026-05-31 22:51:46,978 INFO azure.ai.agentserver: Invoking handler ResponsesAgentServerHost._dispatch_create for response caresp_8eb6671bbe416c8e00cV1YNaISL0hZVON6wIbqzyONzNqee1uI
+2026-05-31 22:51:46,984 INFO agent_framework: {'role': <MessageRole.USER: 'user'>, 'parts': [{'type': 'text', 'content': "What's the weather like in Seattle?"}]}
+2026-05-31 22:51:46,988 INFO agent_framework: {'role': <MessageRole.USER: 'user'>, 'parts': [{'type': 'text', 'content': "What's the weather like in Seattle?"}]}
+{
+    "name": "GET",
+    "context": {
+        "trace_id": "0x2b43842ef0a0b0323e2851002ba5f336",
+        "span_id": "0xb565a38be24829d8",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.CLIENT",
+    "parent_id": "0xa9008d4aafe56db0",
+    "start_time": "2026-06-01T02:51:47.465041Z",
+    "end_time": "2026-06-01T02:51:48.621790Z",
+    "status": {
+        "status_code": "ERROR",
+        "description": "ConnectTimeoutError: (<HTTPConnection(host='169.254.169.254', port=80) at 0x2bc4f6b1fd0>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')"
+    },
+    "attributes": {
+        "http.method": "GET",
+        "http.url": "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://ai.azure.com",
+        "user_agent.original": "azsdk-python-identity/1.25.2 Python/3.14.3 (Windows-11-10.0.26100-SP0)"
+    },
+    "events": [
+        {
+            "name": "exception",
+            "timestamp": "2026-06-01T02:51:48.621464Z",
+            "attributes": {
+                "exception.type": "urllib3.exceptions.ConnectTimeoutError",
+                "exception.message": "(<HTTPConnection(host='169.254.169.254', port=80) at 0x2bc4f6b1fd0>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')",
+                "exception.stacktrace": "Traceback (most recent call last):\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\urllib3\\connection.py\", line 204, in _new_conn\n    sock = connection.create_connection(\n        (self._dns_host, self.port),\n    ...<2 lines>...\n        socket_options=self.socket_options,\n    )\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\urllib3\\util\\connection.py\", line 85, in create_connection\n    raise err\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\urllib3\\util\\connection.py\", line 73, in create_connection\n    sock.connect(sa)\n    ~~~~~~~~~~~~^^^^\nTimeoutError: timed out\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\opentelemetry\\trace\\__init__.py\", line 619, in use_span\n    yield span\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\opentelemetry\\sdk\\trace\\__init__.py\", line 1173, in start_as_current_span\n    yield span\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\opentelemetry\\instrumentation\\requests\\__init__.py\", line 505, in instrumented_send\n    raise exception.with_traceback(exception.__traceback__)\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\opentelemetry\\instrumentation\\requests\\__init__.py\", line 432, in instrumented_send\n    result = wrapped_send(\n        self, request, **kwargs\n    )  # *** PROCEED\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\requests\\sessions.py\", line 703, in send\n    r = adapter.send(request, **kwargs)\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\requests\\adapters.py\", line 644, in send\n    resp = conn.urlopen(\n        method=request.method,\n    ...<9 lines>...\n        chunked=chunked,\n    )\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\opentelemetry\\instrumentation\\urllib3\\__init__.py\", line 451, in instrumented_urlopen\n    return wrapped(*args, **kwargs)\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\urllib3\\connectionpool.py\", line 841, in urlopen\n    retries = retries.increment(\n        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]\n    )\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\urllib3\\util\\retry.py\", line 465, in increment\n    raise reraise(type(error), error, _stacktrace)\n          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\urllib3\\util\\util.py\", line 39, in reraise\n    raise value\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\urllib3\\connectionpool.py\", line 787, in urlopen\n    response = self._make_request(\n        conn,\n    ...<10 lines>...\n        **response_kw,\n    )\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\urllib3\\connectionpool.py\", line 493, in _make_request\n    conn.request(\n    ~~~~~~~~~~~~^\n        method,\n        ^^^^^^^\n    ...<6 lines>...\n        enforce_content_length=enforce_content_length,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\urllib3\\connection.py\", line 500, in request\n    self.endheaders()\n    ~~~~~~~~~~~~~~~^^\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\http\\client.py\", line 1353, in endheaders\n    self._send_output(message_body, encode_chunked=encode_chunked)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\http\\client.py\", line 1113, in _send_output\n    self.send(msg)\n    ~~~~~~~~~^^^^^\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\http\\client.py\", line 1057, in send\n    self.connect()\n    ~~~~~~~~~~~~^^\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\urllib3\\connection.py\", line 331, in connect\n    self.sock = self._new_conn()\n                ~~~~~~~~~~~~~~^^\n  File \"c:\\Users\\anefedova\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\urllib3\\connection.py\", line 213, in _new_conn\n    raise ConnectTimeoutError(\n    ...<2 lines>...\n    ) from e\nurllib3.exceptions.ConnectTimeoutError: (<HTTPConnection(host='169.254.169.254', port=80) at 0x2bc4f6b1fd0>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')\n",
+                "exception.escaped": "False"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.40.0",
+            "service.name": "azure.ai.agentserver"
+        },
+        "schema_url": ""
+    }
+}
+2026-05-31 22:51:50,494 INFO azure.identity._credentials.chained: DefaultAzureCredential acquired a token from AzureCliCredential
+{
+    "name": "POST",
+    "context": {
+        "trace_id": "0x2b43842ef0a0b0323e2851002ba5f336",
+        "span_id": "0x50d4e5cc1d1640ae",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.CLIENT",
+    "parent_id": "0xa9008d4aafe56db0",
+    "start_time": "2026-06-01T02:51:50.495130Z",
+    "end_time": "2026-06-01T02:51:52.012672Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.method": "POST",
+        "http.url": "https://new-agent-test-ai.services.ai.azure.com/api/projects/WTH-Hosted-Agents/openai/v1/responses",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.40.0",
+            "service.name": "azure.ai.agentserver"
+        },
+        "schema_url": ""
+    }
+}
+2026-05-31 22:51:52,013 INFO httpx: HTTP Request: POST https://new-agent-test-ai.services.ai.azure.com/api/projects/WTH-Hosted-Agents/openai/v1/responses "HTTP/1.1 200 OK"
+2026-05-31 22:51:52,109 INFO agent_framework: {'role': 'assistant', 'parts': [{'type': 'tool_call', 'id': 'call_Y5z21JZgSoBX36S5njRwhuzz', 'name': 'get_weather', 'arguments': '{"location":"Seattle"}'}]}
+{
+    "name": "chat gpt-4-1",
+    "context": {
+        "trace_id": "0x2b43842ef0a0b0323e2851002ba5f336",
+        "span_id": "0xa9008d4aafe56db0",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x93e8145247a62649",
+    "start_time": "2026-06-01T02:51:46.988248Z",
+    "end_time": "2026-06-01T02:51:52.109514Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "gen_ai.input.messages": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"What's the weather like in Seattle?\"}]}]",
+        "gen_ai.system_instructions": "[{\"type\": \"text\", \"content\": \"You are a helpful weather assistant. When a user asks about the weather, use the get_weather tool to look up the current conditions. Always mention the location in your response and provide a concise, friendly summary. If the user asks about a location not in your data, provide the default conditions and let them know the data is simulated.\"}]",
+        "gen_ai.request.choice.count": 1,
+        "gen_ai.operation.name": "chat",
+        "gen_ai.provider.name": "azure.ai.foundry",
+        "server.address": "Unknown",
+        "gen_ai.request.model": "gpt-4-1",
+        "gen_ai.response.id": "resp_0df2e6d49cf4aadd016a1cf3c746bc819080808451993a931f",
+        "gen_ai.response.model": "gpt-4-1",
+        "gen_ai.usage.input_tokens": 136,
+        "gen_ai.usage.output_tokens": 15,
+        "gen_ai.output.messages": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"call_Y5z21JZgSoBX36S5njRwhuzz\", \"name\": \"get_weather\", \"arguments\": \"{\\\"location\\\":\\\"Seattle\\\"}\"}]}]"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.40.0",
+            "service.name": "azure.ai.agentserver"
+        },
+        "schema_url": ""
+    }
+}
+2026-05-31 22:51:52,113 INFO agent_framework: Function name: get_weather
+2026-05-31 22:51:52,113 INFO agent_framework: Function get_weather succeeded.
+2026-05-31 22:51:52,113 INFO agent_framework: Function duration: 0.000030s
+{
+    "name": "execute_tool get_weather",
+    "context": {
+        "trace_id": "0x2b43842ef0a0b0323e2851002ba5f336",
+        "span_id": "0xd2275c2cbb896c40",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x93e8145247a62649",
+    "start_time": "2026-06-01T02:51:52.113664Z",
+    "end_time": "2026-06-01T02:51:52.149209Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "gen_ai.operation.name": "execute_tool",
+        "gen_ai.tool.name": "get_weather",
+        "gen_ai.tool.call.id": "call_Y5z21JZgSoBX36S5njRwhuzz",
+        "gen_ai.tool.type": "function",
+        "gen_ai.tool.description": "Get the current weather for a given location.",
+        "gen_ai.tool.call.arguments": "{\"location\": \"Seattle\"}",
+        "gen_ai.tool.call.result": "The weather in Seattle is: 55F, cloudy with light rain",
+        "agent_framework.function.invocation.duration": 3.0100000003585592e-05
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.40.0",
+            "service.name": "azure.ai.agentserver"
+        },
+        "schema_url": ""
+    }
+}
+2026-05-31 22:51:52,152 INFO agent_framework: {'role': <MessageRole.USER: 'user'>, 'parts': [{'type': 'text', 'content': "What's the weather like in Seattle?"}]}
+2026-05-31 22:51:52,152 INFO agent_framework: {'role': 'assistant', 'parts': [{'type': 'tool_call', 'id': 'call_Y5z21JZgSoBX36S5njRwhuzz', 'name': 'get_weather', 'arguments': '{"location":"Seattle"}'}]}
+2026-05-31 22:51:52,152 INFO agent_framework: {'role': 'tool', 'parts': [{'type': 'tool_call_response', 'id': 'call_Y5z21JZgSoBX36S5njRwhuzz', 'response': 'The weather in Seattle is: 55F, cloudy with light rain'}]}
+{
+    "name": "POST",
+    "context": {
+        "trace_id": "0x2b43842ef0a0b0323e2851002ba5f336",
+        "span_id": "0x4ba7d3d17af3af86",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.CLIENT",
+    "parent_id": "0xbf9e0aaedb3857f2",
+    "start_time": "2026-06-01T02:51:52.154292Z",
+    "end_time": "2026-06-01T02:51:53.221646Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.method": "POST",
+        "http.url": "https://new-agent-test-ai.services.ai.azure.com/api/projects/WTH-Hosted-Agents/openai/v1/responses",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.40.0",
+            "service.name": "azure.ai.agentserver"
+        },
+        "schema_url": ""
+    }
+}
+2026-05-31 22:51:53,223 INFO httpx: HTTP Request: POST https://new-agent-test-ai.services.ai.azure.com/api/projects/WTH-Hosted-Agents/openai/v1/responses "HTTP/1.1 200 OK"
+2026-05-31 22:51:53,228 INFO agent_framework: {'role': 'assistant', 'parts': [{'type': 'text', 'content': "The current weather in Seattle is 55°F, cloudy with light rain. You might want to bring a raincoat or umbrella if you're heading out!"}]}
+{
+    "name": "chat gpt-4-1",
+    "context": {
+        "trace_id": "0x2b43842ef0a0b0323e2851002ba5f336",
+        "span_id": "0xbf9e0aaedb3857f2",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x93e8145247a62649",
+    "start_time": "2026-06-01T02:51:52.152142Z",
+    "end_time": "2026-06-01T02:51:53.228726Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "gen_ai.input.messages": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"What's the weather like in Seattle?\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"call_Y5z21JZgSoBX36S5njRwhuzz\", \"name\": \"get_weather\", \"arguments\": \"{\\\"location\\\":\\\"Seattle\\\"}\"}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"call_Y5z21JZgSoBX36S5njRwhuzz\", \"response\": \"The weather in Seattle is: 55F, cloudy with light rain\"}]}]",
+        "gen_ai.system_instructions": "[{\"type\": \"text\", \"content\": \"You are a helpful weather assistant. When a user asks about the weather, use the get_weather tool to look up the current conditions. Always mention the location in your response and provide a concise, friendly summary. If the user asks about a location not in your data, provide the default conditions and let them know the data is simulated.\"}]",
+        "gen_ai.request.choice.count": 1,
+        "gen_ai.operation.name": "chat",
+        "gen_ai.provider.name": "azure.ai.foundry",
+        "server.address": "Unknown",
+        "gen_ai.request.model": "gpt-4-1",
+        "gen_ai.response.id": "resp_0df2e6d49cf4aadd016a1cf3c863f48190a98548c2d5275cb7",
+        "gen_ai.response.model": "gpt-4-1",
+        "gen_ai.usage.input_tokens": 170,
+        "gen_ai.usage.output_tokens": 32,
+        "gen_ai.output.messages": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"The current weather in Seattle is 55\u00b0F, cloudy with light rain. You might want to bring a raincoat or umbrella if you're heading out!\"}]}]"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.40.0",
+            "service.name": "azure.ai.agentserver"
+        },
+        "schema_url": ""
+    }
+}
+2026-05-31 22:51:53,229 INFO agent_framework: {'role': 'assistant', 'parts': [{'type': 'tool_call', 'id': 'call_Y5z21JZgSoBX36S5njRwhuzz', 'name': 'get_weather', 'arguments': '{"location":"Seattle"}'}]}
+2026-05-31 22:51:53,229 INFO agent_framework: {'role': 'tool', 'parts': [{'type': 'tool_call_response', 'id': 'call_Y5z21JZgSoBX36S5njRwhuzz', 'response': 'The weather in Seattle is: 55F, cloudy with light rain'}]}
+2026-05-31 22:51:53,229 INFO agent_framework: {'role': 'assistant', 'parts': [{'type': 'text', 'content': "The current weather in Seattle is 55°F, cloudy with light rain. You might want to bring a raincoat or umbrella if you're heading out!"}]}
+{
+    "name": "invoke_agent 46a7ecdb-607e-4d58-95d5-7a5512891c89",
+    "context": {
+        "trace_id": "0x2b43842ef0a0b0323e2851002ba5f336",
+        "span_id": "0x93e8145247a62649",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2026-06-01T02:51:46.984229Z",
+    "end_time": "2026-06-01T02:51:53.229488Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "gen_ai.input.messages": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"What's the weather like in Seattle?\"}]}]",
+        "gen_ai.system_instructions": "[{\"type\": \"text\", \"content\": \"You are a helpful weather assistant. When a user asks about the weather, use the get_weather tool to look up the current conditions. Always mention the location in your response and provide a concise, friendly summary. If the user asks about a location not in your data, provide the default conditions and let them know the data is simulated.\"}]",
+        "gen_ai.request.choice.count": 1,
+        "gen_ai.operation.name": "invoke_agent",
+        "gen_ai.provider.name": "microsoft.agent_framework",
+        "gen_ai.agent.id": "46a7ecdb-607e-4d58-95d5-7a5512891c89",
+        "gen_ai.agent.name": "46a7ecdb-607e-4d58-95d5-7a5512891c89",
+        "gen_ai.request.model": "gpt-4-1",
+        "gen_ai.tool.definitions": "[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get the current weather for a given location.\", \"parameters\": {\"properties\": {\"location\": {\"description\": \"The city or location to get weather for\", \"title\": \"Location\", \"type\": \"string\"}}, \"required\": [\"location\"], \"title\": \"get_weather_input\", \"type\": \"object\"}}}]",
+        "gen_ai.usage.input_tokens": 306,
+        "gen_ai.usage.output_tokens": 47,
+        "gen_ai.output.messages": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"call_Y5z21JZgSoBX36S5njRwhuzz\", \"name\": \"get_weather\", \"arguments\": \"{\\\"location\\\":\\\"Seattle\\\"}\"}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"call_Y5z21JZgSoBX36S5njRwhuzz\", \"response\": \"The weather in Seattle is: 55F, cloudy with light rain\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"The current weather in Seattle is 55\u00b0F, cloudy with light rain. You might want to bring a raincoat or umbrella if you're heading out!\"}]}]"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.40.0",
+            "service.name": "azure.ai.agentserver"
+        },
+        "schema_url": ""
+    }
+}
+2026-05-31 22:51:53,239 INFO azure.ai.agentserver: Response caresp_8eb6671bbe416c8e00cV1YNaISL0hZVON6wIbqzyONzNqee1uI completed: status=completed output_count=3
+2026-05-31 22:51:53,241 INFO azure.ai.agentserver: 127.0.0.1:55348 "POST /responses 1.1" 200 1465 6267808μs
+2026-05-31 22:51:53,241 INFO azure.ai.agentserver: Inbound POST /responses completed with status 200 in 6267.9ms
+2026-05-31 22:52:04,294 INFO azure.ai.agentserver: Inbound POST /responses started
+2026-05-31 22:52:04,295 INFO azure.ai.agentserver: Creating response caresp_8eb6671bbe416c8e00hRc3ZxyCaiYTYmMNDX15RmNRjgS6kw5N: streaming=False background=False store=True model=gpt-4-1 conversation_id=None previous_response_id=caresp_8eb6671bbe416c8e00cV1YNaISL0hZVON6wIbqzyONzNqee1uI has_user_isolation_key=False has_chat_isolation_key=False
+2026-05-31 22:52:04,295 INFO azure.ai.agentserver: Invoking handler ResponsesAgentServerHost._dispatch_create for response caresp_8eb6671bbe416c8e00hRc3ZxyCaiYTYmMNDX15RmNRjgS6kw5N
+2026-05-31 22:52:04,296 INFO agent_framework: {'role': <MessageRole.USER: 'user'>, 'parts': [{'type': 'text', 'content': "What's the weather like in Seattle?"}]}
+2026-05-31 22:52:04,296 INFO agent_framework: {'role': 'assistant', 'parts': [{'type': 'tool_call', 'id': 'call_Y5z21JZgSoBX36S5njRwhuzz', 'name': 'get_weather', 'arguments': '{"location":"Seattle"}'}]}
+2026-05-31 22:52:04,296 INFO agent_framework: {'role': 'tool', 'parts': [{'type': 'tool_call_response', 'id': 'call_Y5z21JZgSoBX36S5njRwhuzz', 'response': 'The weather in Seattle is: 55F, cloudy with light rain'}]}
+2026-05-31 22:52:04,296 INFO agent_framework: {'role': <MessageRole.ASSISTANT: 'assistant'>, 'parts': [{'type': 'text', 'content': "The current weather in Seattle is 55°F, cloudy with light rain. You might want to bring a raincoat or umbrella if you're heading out!"}]}
+2026-05-31 22:52:04,296 INFO agent_framework: {'role': <MessageRole.USER: 'user'>, 'parts': [{'type': 'text', 'content': 'How about Tokyo? Is it warmer there?'}]}
+2026-05-31 22:52:04,296 INFO agent_framework: {'role': <MessageRole.USER: 'user'>, 'parts': [{'type': 'text', 'content': "What's the weather like in Seattle?"}]}
+2026-05-31 22:52:04,296 INFO agent_framework: {'role': 'assistant', 'parts': [{'type': 'tool_call', 'id': 'call_Y5z21JZgSoBX36S5njRwhuzz', 'name': 'get_weather', 'arguments': '{"location":"Seattle"}'}]}
+2026-05-31 22:52:04,296 INFO agent_framework: {'role': 'tool', 'parts': [{'type': 'tool_call_response', 'id': 'call_Y5z21JZgSoBX36S5njRwhuzz', 'response': 'The weather in Seattle is: 55F, cloudy with light rain'}]}
+2026-05-31 22:52:04,296 INFO agent_framework: {'role': <MessageRole.ASSISTANT: 'assistant'>, 'parts': [{'type': 'text', 'content': "The current weather in Seattle is 55°F, cloudy with light rain. You might want to bring a raincoat or umbrella if you're heading out!"}]}
+2026-05-31 22:52:04,296 INFO agent_framework: {'role': <MessageRole.USER: 'user'>, 'parts': [{'type': 'text', 'content': 'How about Tokyo? Is it warmer there?'}]}
+{
+    "name": "POST",
+    "context": {
+        "trace_id": "0x124bc709dbd354f98f19df66eb5eeb34",
+        "span_id": "0xa1a5df7386d8e698",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.CLIENT",
+    "parent_id": "0x3022b86e37f77101",
+    "start_time": "2026-06-01T02:52:04.301042Z",
+    "end_time": "2026-06-01T02:52:05.592335Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.method": "POST",
+        "http.url": "https://new-agent-test-ai.services.ai.azure.com/api/projects/WTH-Hosted-Agents/openai/v1/responses",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.40.0",
+            "service.name": "azure.ai.agentserver"
+        },
+        "schema_url": ""
+    }
+}
+2026-05-31 22:52:05,593 INFO httpx: HTTP Request: POST https://new-agent-test-ai.services.ai.azure.com/api/projects/WTH-Hosted-Agents/openai/v1/responses "HTTP/1.1 200 OK"
+2026-05-31 22:52:05,596 INFO agent_framework: {'role': 'assistant', 'parts': [{'type': 'tool_call', 'id': 'call_NB7Mhnswee7iJkbQlNVk7oRm', 'name': 'get_weather', 'arguments': '{"location":"Tokyo"}'}]}
+{
+    "name": "chat gpt-4-1",
+    "context": {
+        "trace_id": "0x124bc709dbd354f98f19df66eb5eeb34",
+        "span_id": "0x3022b86e37f77101",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x35dee69c741291cb",
+    "start_time": "2026-06-01T02:52:04.296664Z",
+    "end_time": "2026-06-01T02:52:05.596843Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "gen_ai.input.messages": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"What's the weather like in Seattle?\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"call_Y5z21JZgSoBX36S5njRwhuzz\", \"name\": \"get_weather\", \"arguments\": \"{\\\"location\\\":\\\"Seattle\\\"}\"}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"call_Y5z21JZgSoBX36S5njRwhuzz\", \"response\": \"The weather in Seattle is: 55F, cloudy with light rain\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"The current weather in Seattle is 55\u00b0F, cloudy with light rain. You might want to bring a raincoat or umbrella if you're heading out!\"}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"How about Tokyo? Is it warmer there?\"}]}]",
+        "gen_ai.system_instructions": "[{\"type\": \"text\", \"content\": \"You are a helpful weather assistant. When a user asks about the weather, use the get_weather tool to look up the current conditions. Always mention the location in your response and provide a concise, friendly summary. If the user asks about a location not in your data, provide the default conditions and let them know the data is simulated.\"}]",
+        "gen_ai.request.choice.count": 1,
+        "gen_ai.operation.name": "chat",
+        "gen_ai.provider.name": "azure.ai.foundry",
+        "server.address": "Unknown",
+        "gen_ai.request.model": "gpt-4-1",
+        "gen_ai.response.id": "resp_0afc8e0dae9f9105016a1cf3d4dbfc81908baceaf1b1f514ae",
+        "gen_ai.response.model": "gpt-4-1",
+        "gen_ai.usage.input_tokens": 217,
+        "gen_ai.usage.output_tokens": 15,
+        "gen_ai.output.messages": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"call_NB7Mhnswee7iJkbQlNVk7oRm\", \"name\": \"get_weather\", \"arguments\": \"{\\\"location\\\":\\\"Tokyo\\\"}\"}]}]"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.40.0",
+            "service.name": "azure.ai.agentserver"
+        },
+        "schema_url": ""
+    }
+}
+2026-05-31 22:52:05,597 INFO agent_framework: Function name: get_weather
+2026-05-31 22:52:05,598 INFO agent_framework: Function get_weather succeeded.
+2026-05-31 22:52:05,598 INFO agent_framework: Function duration: 0.000024s
+{
+    "name": "execute_tool get_weather",
+    "context": {
+        "trace_id": "0x124bc709dbd354f98f19df66eb5eeb34",
+        "span_id": "0x40466e4557c3a124",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x35dee69c741291cb",
+    "start_time": "2026-06-01T02:52:05.597842Z",
+    "end_time": "2026-06-01T02:52:05.598486Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "gen_ai.operation.name": "execute_tool",
+        "gen_ai.tool.name": "get_weather",
+        "gen_ai.tool.call.id": "call_NB7Mhnswee7iJkbQlNVk7oRm",
+        "gen_ai.tool.type": "function",
+        "gen_ai.tool.description": "Get the current weather for a given location.",
+        "gen_ai.tool.call.arguments": "{\"location\": \"Tokyo\"}",
+        "gen_ai.tool.call.result": "The weather in Tokyo is: 80F, warm and humid",
+        "agent_framework.function.invocation.duration": 2.3600000076839933e-05
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.40.0",
+            "service.name": "azure.ai.agentserver"
+        },
+        "schema_url": ""
+    }
+}
+2026-05-31 22:52:05,599 INFO agent_framework: {'role': <MessageRole.USER: 'user'>, 'parts': [{'type': 'text', 'content': "What's the weather like in Seattle?"}]}
+2026-05-31 22:52:05,599 INFO agent_framework: {'role': 'assistant', 'parts': [{'type': 'tool_call', 'id': 'call_Y5z21JZgSoBX36S5njRwhuzz', 'name': 'get_weather', 'arguments': '{"location":"Seattle"}'}]}
+2026-05-31 22:52:05,599 INFO agent_framework: {'role': 'tool', 'parts': [{'type': 'tool_call_response', 'id': 'call_Y5z21JZgSoBX36S5njRwhuzz', 'response': 'The weather in Seattle is: 55F, cloudy with light rain'}]}
+2026-05-31 22:52:05,599 INFO agent_framework: {'role': <MessageRole.ASSISTANT: 'assistant'>, 'parts': [{'type': 'text', 'content': "The current weather in Seattle is 55°F, cloudy with light rain. You might want to bring a raincoat or umbrella if you're heading out!"}]}
+2026-05-31 22:52:05,599 INFO agent_framework: {'role': <MessageRole.USER: 'user'>, 'parts': [{'type': 'text', 'content': 'How about Tokyo? Is it warmer there?'}]}
+2026-05-31 22:52:05,599 INFO agent_framework: {'role': 'assistant', 'parts': [{'type': 'tool_call', 'id': 'call_NB7Mhnswee7iJkbQlNVk7oRm', 'name': 'get_weather', 'arguments': '{"location":"Tokyo"}'}]}
+2026-05-31 22:52:05,599 INFO agent_framework: {'role': 'tool', 'parts': [{'type': 'tool_call_response', 'id': 'call_NB7Mhnswee7iJkbQlNVk7oRm', 'response': 'The weather in Tokyo is: 80F, warm and humid'}]}
+{
+    "name": "POST",
+    "context": {
+        "trace_id": "0x124bc709dbd354f98f19df66eb5eeb34",
+        "span_id": "0x7368e3047589622c",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.CLIENT",
+    "parent_id": "0x79010418bccaf0c1",
+    "start_time": "2026-06-01T02:52:05.605168Z",
+    "end_time": "2026-06-01T02:52:07.166374Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "http.method": "POST",
+        "http.url": "https://new-agent-test-ai.services.ai.azure.com/api/projects/WTH-Hosted-Agents/openai/v1/responses",
+        "http.status_code": 200
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.40.0",
+            "service.name": "azure.ai.agentserver"
+        },
+        "schema_url": ""
+    }
+}
+2026-05-31 22:52:07,167 INFO httpx: HTTP Request: POST https://new-agent-test-ai.services.ai.azure.com/api/projects/WTH-Hosted-Agents/openai/v1/responses "HTTP/1.1 200 OK"
+2026-05-31 22:52:07,171 INFO agent_framework: {'role': 'assistant', 'parts': [{'type': 'text', 'content': 'In Tokyo, it’s currently 80°F, warm and humid—definitely warmer than Seattle! If you’re in Tokyo, light clothing is recommended, and don’t forget to stay hydrated.'}]}
+{
+    "name": "chat gpt-4-1",
+    "context": {
+        "trace_id": "0x124bc709dbd354f98f19df66eb5eeb34",
+        "span_id": "0x79010418bccaf0c1",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x35dee69c741291cb",
+    "start_time": "2026-06-01T02:52:05.599045Z",
+    "end_time": "2026-06-01T02:52:07.178293Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "gen_ai.input.messages": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"What's the weather like in Seattle?\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"call_Y5z21JZgSoBX36S5njRwhuzz\", \"name\": \"get_weather\", \"arguments\": \"{\\\"location\\\":\\\"Seattle\\\"}\"}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"call_Y5z21JZgSoBX36S5njRwhuzz\", \"response\": \"The weather in Seattle is: 55F, cloudy with light rain\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"The current weather in Seattle is 55\u00b0F, cloudy with light rain. You might want to bring a raincoat or umbrella if you're heading out!\"}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"How about Tokyo? Is it warmer there?\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"call_NB7Mhnswee7iJkbQlNVk7oRm\", \"name\": \"get_weather\", \"arguments\": \"{\\\"location\\\":\\\"Tokyo\\\"}\"}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"call_NB7Mhnswee7iJkbQlNVk7oRm\", \"response\": \"The weather in Tokyo is: 80F, warm and humid\"}]}]",
+        "gen_ai.system_instructions": "[{\"type\": \"text\", \"content\": \"You are a helpful weather assistant. When a user asks about the weather, use the get_weather tool to look up the current conditions. Always mention the location in your response and provide a concise, friendly summary. If the user asks about a location not in your data, provide the default conditions and let them know the data is simulated.\"}]",
+        "gen_ai.request.choice.count": 1,
+        "gen_ai.operation.name": "chat",
+        "gen_ai.provider.name": "azure.ai.foundry",
+        "server.address": "Unknown",
+        "gen_ai.request.model": "gpt-4-1",
+        "gen_ai.response.id": "resp_0afc8e0dae9f9105016a1cf3d5d9508190a88db06bcfb44a2f",
+        "gen_ai.response.model": "gpt-4-1",
+        "gen_ai.usage.input_tokens": 250,
+        "gen_ai.usage.output_tokens": 41,
+        "gen_ai.output.messages": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"In Tokyo, it\u2019s currently 80\u00b0F, warm and humid\u2014definitely warmer than Seattle! If you\u2019re in Tokyo, light clothing is recommended, and don\u2019t forget to stay hydrated.\"}]}]"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.40.0",
+            "service.name": "azure.ai.agentserver"
+        },
+        "schema_url": ""
+    }
+}
+2026-05-31 22:52:07,179 INFO agent_framework: {'role': 'assistant', 'parts': [{'type': 'tool_call', 'id': 'call_NB7Mhnswee7iJkbQlNVk7oRm', 'name': 'get_weather', 'arguments': '{"location":"Tokyo"}'}]}
+2026-05-31 22:52:07,179 INFO agent_framework: {'role': 'tool', 'parts': [{'type': 'tool_call_response', 'id': 'call_NB7Mhnswee7iJkbQlNVk7oRm', 'response': 'The weather in Tokyo is: 80F, warm and humid'}]}
+2026-05-31 22:52:07,179 INFO agent_framework: {'role': 'assistant', 'parts': [{'type': 'text', 'content': 'In Tokyo, it’s currently 80°F, warm and humid—definitely warmer than Seattle! If you’re in Tokyo, light clothing is recommended, and don’t forget to stay hydrated.'}]}
+{
+    "name": "invoke_agent 46a7ecdb-607e-4d58-95d5-7a5512891c89",
+    "context": {
+        "trace_id": "0x124bc709dbd354f98f19df66eb5eeb34",
+        "span_id": "0x35dee69c741291cb",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2026-06-01T02:52:04.296270Z",
+    "end_time": "2026-06-01T02:52:07.180036Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {
+        "gen_ai.input.messages": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"What's the weather like in Seattle?\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"call_Y5z21JZgSoBX36S5njRwhuzz\", \"name\": \"get_weather\", \"arguments\": \"{\\\"location\\\":\\\"Seattle\\\"}\"}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"call_Y5z21JZgSoBX36S5njRwhuzz\", \"response\": \"The weather in Seattle is: 55F, cloudy with light rain\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"The current weather in Seattle is 55\u00b0F, cloudy with light rain. You might want to bring a raincoat or umbrella if you're heading out!\"}]}, {\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"How about Tokyo? Is it warmer there?\"}]}]",
+        "gen_ai.system_instructions": "[{\"type\": \"text\", \"content\": \"You are a helpful weather assistant. When a user asks about the weather, use the get_weather tool to look up the current conditions. Always mention the location in your response and provide a concise, friendly summary. If the user asks about a location not in your data, provide the default conditions and let them know the data is simulated.\"}]",
+        "gen_ai.request.choice.count": 1,
+        "gen_ai.operation.name": "invoke_agent",
+        "gen_ai.provider.name": "microsoft.agent_framework",
+        "gen_ai.agent.id": "46a7ecdb-607e-4d58-95d5-7a5512891c89",
+        "gen_ai.agent.name": "46a7ecdb-607e-4d58-95d5-7a5512891c89",
+        "gen_ai.request.model": "gpt-4-1",
+        "gen_ai.tool.definitions": "[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get the current weather for a given location.\", \"parameters\": {\"properties\": {\"location\": {\"description\": \"The city or location to get weather for\", \"title\": \"Location\", \"type\": \"string\"}}, \"required\": [\"location\"], \"title\": \"get_weather_input\", \"type\": \"object\", \"additionalProperties\": false}}}]",
+        "gen_ai.usage.input_tokens": 467,
+        "gen_ai.usage.output_tokens": 56,
+        "gen_ai.output.messages": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"call_NB7Mhnswee7iJkbQlNVk7oRm\", \"name\": \"get_weather\", \"arguments\": \"{\\\"location\\\":\\\"Tokyo\\\"}\"}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"call_NB7Mhnswee7iJkbQlNVk7oRm\", \"response\": \"The weather in Tokyo is: 80F, warm and humid\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"In Tokyo, it\u2019s currently 80\u00b0F, warm and humid\u2014definitely warmer than Seattle! If you\u2019re in Tokyo, light clothing is recommended, and don\u2019t forget to stay hydrated.\"}]}]"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.40.0",
+            "service.name": "azure.ai.agentserver"
+        },
+        "schema_url": ""
+    }
+}
+2026-05-31 22:52:07,190 INFO azure.ai.agentserver: Response caresp_8eb6671bbe416c8e00hRc3ZxyCaiYTYmMNDX15RmNRjgS6kw5N completed: status=completed output_count=3
+2026-05-31 22:52:07,194 INFO azure.ai.agentserver: 127.0.0.1:58413 "POST /responses 1.1" 200 1491 2899565μs
+2026-05-31 22:52:07,194 INFO azure.ai.agentserver: Inbound POST /responses completed with status 200 in 2899.8ms
