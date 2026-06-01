@@ -1,3 +1,0 @@
-$schema: https://azuremlschemas.azureedge.net/latest/agentManifest.schema.json
-name: weather-agent
-description: A hosted Weather Agent that answers weather questions using a custom tool
