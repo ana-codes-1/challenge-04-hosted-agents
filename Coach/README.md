@@ -29,8 +29,8 @@ Always refer students to the [What The Hack website](https://aka.ms/wth) for the
 
 This hack requires students to have access to an Azure subscription where they can create and consume Azure resources. These Azure requirements should be shared with a stakeholder in the organization that will be providing the Azure subscription(s) that will be used by the students.
 
-- Azure subscription with Contributor role
-- Azure AI Foundry project with a deployed model (e.g., `gpt-4-1`)
+- Azure subscription with **Owner** or **User Access Administrator** role (needed to assign the AcrPull role at registry scope)
+- Azure AI Foundry project with a deployed model (e.g., `gpt-5.1`)
 - Azure Container Registry (ACR) in the same resource group as the Foundry project
 - Foundry Project Manager role at project scope
 
