@@ -26,8 +26,8 @@ In this hack you will learn how to:
 
 ## Prerequisites
 
-- Access to an Azure subscription with Contributor access
-- An Azure AI Foundry project with a deployed model (e.g., `gpt-4-1`)
+- Access to an Azure subscription with **Owner** or **User Access Administrator** access (needed to assign the AcrPull role in Challenge 04)
+- An Azure AI Foundry project with a deployed model (e.g., `gpt-5.1`)
 - An Azure Container Registry in the same resource group
 - Python 3.10+ with Jupyter notebook support
 - Azure CLI installed and authenticated (`az login`)
